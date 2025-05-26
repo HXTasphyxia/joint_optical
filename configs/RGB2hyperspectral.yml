@@ -1,0 +1,20 @@
+DEBUG: True
+EXP_NAME: 'End2End lens design for image reconstruction.'
+seed: ~
+
+lens:
+  path: './optical/ef50mm_f1.8.json'
+  lr: !!python/tuple [1e-4, 1e-4, 0, 0]
+
+network:
+  pretrained: False
+  lr: !!float 1e-3
+
+train:
+  train_dir: './datasets/TOSHI'
+  epochs: 30
+  bs: 8
+  img_res: !!python/tuple [256, 256]
+
+  noise: 0.001
+  depth: -20000
